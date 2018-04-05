@@ -28,6 +28,7 @@ BUILD_DIR=${HOME}/qtbuild
 VER2="${VERSION_MAJOR}.${VERSION_MINOR}"
 VER3="${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
 SOURCE="qt-everywhere-src-${VER3}${VERSION_SUFFIX}.tar.xz"
+# Releases prior to Qt 5.10.0 use this format:
 #SOURCE="qt-everywhere-opensource-src-${VER3}${VERSION_SUFFIX}.tar.xz"
 
 # Name of source directory
@@ -36,10 +37,10 @@ DIR=`basename ${SOURCE} .tar.xz`
 # Name of created build archive file
 if [ ${BUILD_TYPE} = "full" ]
 then
-    BUILD="Qt${VERION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-full.tgz"
+    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-full.tgz"
 elif [ ${BUILD_TYPE} = "minimal" ]
 then
-    BUILD="Qt${VERION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-minimal.tgz"
+    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-minimal.tgz"
 else
     echo "Unknown build type: ${BUILD_TYPE}"
     exit 1
@@ -110,14 +111,14 @@ then
 fi
 
 # Make tar file of build
-tar czf ${BUILD} /usr/local/Qt-${VERION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+cd ..
+tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
 
 # Remove source
-cd ..
-#rm -rf ${DIR}
+rm -rf ${DIR}
 
 # Remove install
-#sudo rm -rf /usr/local/Qt-${VERION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+sudo rm -rf /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
 
 # Done.
 echo "*** Done, build is in ${BUILD}"

@@ -37,6 +37,7 @@ if [ ! -d "${BUILD_DIR}" ]
 then
     mkdir -p "${BUILD_DIR}"
 fi
+cp qt-creator-arm.patch ${BUILD_DIR}
 cd ${BUILD_DIR}
 
 # Download source if needed.
@@ -60,6 +61,11 @@ fi
 echo "*** Extracting source"
 tar xJf ${SOURCE}
 cd ${DIR}
+
+# Currently need to apply a patch to get a third party library to
+# build on ARM.
+echo "*** Applying patch"
+patch -p1 <../qt-creator-arm.patch
 
 # Run qmake (needs to be in path)
 echo "*** Running qmake"
