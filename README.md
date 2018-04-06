@@ -12,8 +12,8 @@ These builds support the latest Qt "recommended" and "long term support" release
 
 | Qt Version | Platform       | Type   | Options | Size   | Comments            |
 | ---------- | -------------- | -------| ------- | ------ | ------------------- |
-| 5.9.4      | Raspberry Pi 3 | Native | Full    | 442MB  |                     |
-| 5.9.4      | Raspberry Pi 3 | Native | Minimal |  58MB  | No examples or docs |
+| 5.9.4      | Raspberry Pi 3 | Native | Full    | 439MB  |                     |
+| 5.9.4      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
 | 5.10.1     | Raspberry Pi 3 | Native | Full    | 453MB  |                     |
 | 5.10.1     | Raspberry Pi 3 | Native | Minimal |  58MB  | No examples or docs |
 
@@ -21,7 +21,7 @@ The builds include most Qt modules (see below under "Known Issues and Limitation
 
 # Building
 
-If you want to build these images yourself, you can run the provided script (qtbuild.sh) on a Raspberry Pi system. It is recommended that you configure the system (using raspi-config) to boot into a text console and not run the graphical desktop. I have had issues with the Raspberry Pi rebooting during the build. I seem to have better success running a build from ssh rather than locally on a text console.
+If you want to build these images yourself, you can run the provided script (qtbuild.sh) on a Raspberry Pi system. It is recommended that you configure the system (using raspi-config) to boot into a text console and not run the graphical desktop. I have had issues with the Raspberry Pi rebooting during the build. If so, you can manually restart it.
 
 There are a number of packages which need to be installed in order to built Qt. Here is a list which may not be entirely complete or accurate (you can install them with sudo apt-get <package names...>):
 
@@ -84,7 +84,7 @@ x11proto-xf86vidmode-dev x11proto-xinerama-dev xtrans-dev xutils-dev
 zlib1g-dev
 ```
 
-Expect the build to take many hours on a Raspberry Pi 3 (on the order of eight hours for the minimal build).
+Expect the build to take many hours on a Raspberry Pi 3 (on the order of eight hours for the minimal build, 24 hours for a full build).
 
 # Installing
 
@@ -92,7 +92,7 @@ Download the desired binary archive, e.g. Qt5.10.1-RaspberryPi3-bin-full.tgz, an
 
 ```
 cd /
-sudo tar xf Qt5.10.1-RaspberryPi3-bin-full.tgz
+sudo tar xf /home/pi/Qt5.10.1-RaspberryPi3-bin-full.tgz
 ```
 
 You can then run qmake specifying the full path, e.g. /usr/local/Qt-5.10.1/bin/qmake. You may want to add the Qt binary directory (e.g. /usr/local/Qt-5.10.1/bin) to your path.
