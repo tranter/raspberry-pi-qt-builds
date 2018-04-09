@@ -89,7 +89,8 @@ tar czf ${BUILD} /usr/local/bin/q* /usr/local/share/icons /usr/local/share/qtcre
 # Remove source
 rm -rf ${DIR}
 
-# Remove install (todo)
+# Remove install
+sudo make uninstall INSTALL_ROOT=/usr/local/
 
 # Done.
 echo "*** Done, build is in ${BUILD}"
