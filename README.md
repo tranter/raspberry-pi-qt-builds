@@ -17,7 +17,12 @@ These builds support the latest Qt "recommended" and "long term support" release
 | 5.10.1     | Raspberry Pi 3 | Native | Full    | 453MB  |                     |
 | 5.10.1     | Raspberry Pi 3 | Native | Minimal |  58MB  | No examples or docs |
 
-The builds include most Qt modules (see below under "Known Issues and Limitations"). The folllowing rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
+
+| Qt Creator Version | Platform       | Type   | Options | Size   | Comments            |
+| ------------------ | -------------- | -------| ------- | ------ | ------------------- |
+| 4.6.0              | Raspberry Pi 3 | Native | Full    | 307MB  |                     |
+
+The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 
 # Building
 
@@ -109,7 +114,6 @@ The QtWebengine and QtLocation modules are not included as they require more mem
 
 The following are some features that are being considered for the future:
 
-- Offer Qt Creator binaries
 - Add QtWebEngine and QtLocation modules
 - Offer Debian format packages
 - Provide cross-compilation packages
