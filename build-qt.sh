@@ -176,124 +176,163 @@ then
 fi
 
 # Check that a build was not already extracted
-if [ -d ${DIR} ]
+if [ -n "$step_1" ]
 then
-  echo "A build already exists in ${DIR}"
-  echo "Remove it before doing a build."
-  if [ -z "$no_exec" ]
-  then
-      exit 1
-  fi
-fi
+    if [ -d ${DIR} ]
+    then
+        echo "A build already exists in ${DIR}"
+        echo "Remove it before doing a build."
+        if [ -z "$no_exec" ]
+        then
+            exit 1
+        fi
+    fi
 
-# Extract source
-echo "*** Extracting source"
-if [ -n "$no_exec" ]
-then
-    echo tar xJf ${SOURCE}
-    echo cd ${DIR}
-else
-    tar xJf ${SOURCE}
-    cd ${DIR}
-fi
+    # Extract source
+    echo "*** Extracting source"
+    if [ -n "$no_exec" ]
+    then
+        echo tar xJf ${SOURCE}
+        echo cd ${DIR}
+    else
+        tar xJf ${SOURCE}
+        cd ${DIR}
+    fi
 
-# Remove modules that are too big to build natively.
-echo "*** Removing qtlocation and qtwebengine"
-if [ -n "$no_exec" ]
-then
-    echo rm -rf qtlocation qtwebengine
-else
-    rm -rf qtlocation qtwebengine
+    # Remove modules that are too big to build natively.
+    echo "*** Removing qtlocation and qtwebengine"
+    if [ -n "$no_exec" ]
+    then
+        echo rm -rf qtlocation qtwebengine
+    else
+        rm -rf qtlocation qtwebengine
+    fi
 fi
 
 # Configure
-echo "*** Configuring"
-if [ ${BUILD_TYPE} = "minimal" ]
+if [ -n "$step_2" ]
 then
-    if [ -n "$no_exec" ]
+    echo "*** Configuring"
+    if [ ${BUILD_TYPE} = "minimal" ]
     then
-        echo ./configure -opensource -confirm-license -nomake examples -nomake tests
+        if [ -n "$no_exec" ]
+        then
+            echo cd ${DIR}
+            echo ./configure -opensource -confirm-license -nomake examples -nomake tests
+        else
+            cd ${DIR}
+            ./configure -opensource -confirm-license -nomake examples -nomake tests
+        fi
     else
-        ./configure -opensource -confirm-license -nomake examples -nomake tests
-    fi
-else
-    if [ -n "$no_exec" ]
-    then
-        echo ./configure -opensource -confirm-license
-    else
-        ./configure -opensource -confirm-license
+        if [ -n "$no_exec" ]
+        then
+            echo cd ${DIR}
+            echo ./configure -opensource -confirm-license
+        else
+            cd ${DIR}
+            ./configure -opensource -confirm-license
+        fi
     fi
 fi
 
 # Build
-echo "*** Building"
-if [ -n "$no_exec" ]
+if [ -n "$step_3" ]
 then
-    echo make -s -j${PAR}
-else
-    make -s -j${PAR}
+    echo "*** Building"
+    if [ -n "$no_exec" ]
+    then
+        echo cd ${DIR}
+        echo make -s -j${PAR}
+    else
+        cd ${DIR}
+        make -s -j${PAR}
+    fi
 fi
 
 # Install
-echo "*** Installing"
-if [ -n "$no_exec" ]
+if [ -n "$step_4" ]
 then
-    echo sudo make -s install
-else
-    sudo make -s install
+    echo "*** Installing"
+    if [ -n "$no_exec" ]
+    then
+        echo cd ${DIR}
+        echo sudo make -s install
+    else
+        cd ${DIR}
+        sudo make -s install
+    fi
 fi
 
 # Build docs
-if [ ${BUILD_TYPE} = "full" ]
+if [ -n "$step_5" ]
 then
-  echo "*** Building docs"
-  if [ -n "$no_exec" ]
-  then
-      echo make -s -j${PAR} docs
-  else
-      make -s -j${PAR} docs
-  fi
+    if [ ${BUILD_TYPE} = "full" ]
+    then
+        echo "*** Building docs"
+        if [ -n "$no_exec" ]
+        then
+            echo cd ${DIR}
+            echo make -s -j${PAR} docs
+        else
+            cd ${DIR}
+            make -s -j${PAR} docs
+        fi
+    fi
 fi
 
 # Install docs
-if [ ${BUILD_TYPE} = "full" ]
+if [ -n "$step_6" ]
 then
-  echo "*** Installing docs"
-  if [ -n "$no_exec" ]
-  then
-      echo sudo make -s install_docs
-  else
-      sudo make -s install_docs
-  fi
+    if [ ${BUILD_TYPE} = "full" ]
+    then
+        echo "*** Installing docs"
+        if [ -n "$no_exec" ]
+        then
+            echo cd ${DIR}
+            echo sudo make -s install_docs
+        else
+            cd ${DIR}
+            sudo make -s install_docs
+        fi
+    fi
 fi
 
 # Make tar file of build
-echo "*** Making tar file of build"
-if [ -n "$no_exec" ]
+if [ -n "$step_7" ]
 then
-    echo cd ..
-    echo tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
-else
-    cd ..
-    tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    echo "*** Making tar file of build"
+    if [ -n "$no_exec" ]
+    then
+        echo cd ${DIR}/..
+        echo tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    else
+        cd ${DIR}/..
+        tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    fi
 fi
 
 # Remove source
-echo "*** Removing source"
-if [ -n "$no_exec" ]
+if [ -n "$step_8" ]
 then
-    echo rm -rf ${DIR}
-else
-    rm -rf ${DIR}
+    echo "*** Removing source"
+    if [ -n "$no_exec" ]
+    then
+        echo rm -rf ${DIR}
+    else
+        rm -rf ${DIR}
+    fi
 fi
 
 # Remove install
-echo "*** Removing install"
-if [ -n "$no_exec" ]
+if [ -n "$step_9" ]
 then
-    echo sudo rm -rf /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
-else
-    sudo rm -rf /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    echo "*** Removing install"
+    if [ -n "$no_exec" ]
+    then
+        echo sudo rm -rf /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    else
+        sudo rm -rf /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
+    fi
 fi
 
 # Done.
