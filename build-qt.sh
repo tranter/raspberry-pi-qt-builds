@@ -126,7 +126,7 @@ SOURCE="qt-everywhere-src-${VER3}${VERSION_SUFFIX}.tar.xz"
 #SOURCE="qt-everywhere-opensource-src-${VER3}${VERSION_SUFFIX}.tar.xz"
 
 # Name of source directory
-DIR=`basename ${SOURCE} .tar.xz`
+DIR=${BUILD_DIR}/`basename ${SOURCE} .tar.xz`
 
 # Name of created build archive file
 if [ ${BUILD_TYPE} = "full" ]
@@ -140,7 +140,7 @@ else
     exit 1
 fi
 
-echo "*** Building Qt ${VER3}${VERSION_SUFFIX}"
+echo "*** Building Qt ${VER3}${VERSION_SUFFIX} (${BUILD_TYPE})"
 if [ ! -d "${BUILD_DIR}" ]
 then
     if [ -n "$no_exec" ]
