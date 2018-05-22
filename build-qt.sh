@@ -22,8 +22,8 @@
 
 # Qt version to build
 VERSION_MAJOR=5
-VERSION_MINOR=10
-VERSION_PATCH=1
+VERSION_MINOR=11
+VERSION_PATCH=0
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
