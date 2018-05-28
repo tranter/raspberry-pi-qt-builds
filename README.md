@@ -16,11 +16,14 @@ These builds support the latest Qt "recommended" and "long term support" release
 | 5.9.5      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
 | 5.10.1     | Raspberry Pi 3 | Native | Full    | 453MB  |                     |
 | 5.10.1     | Raspberry Pi 3 | Native | Minimal |  58MB  | No examples or docs |
+| 5.11.0     | Raspberry Pi 3 | Native | Full    | 417MB  |                     |
+| 5.11.0     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
 
 | Qt Creator Version | Platform       | Type   | Options | Size   | Comments            |
 | ------------------ | -------------- | -------| ------- | ------ | ------------------- |
 | 4.6.0              | Raspberry Pi 3 | Native | Full    | 307MB  |                     |
+| 4.6.1              | Raspberry Pi 3 | Native | Full    | 362MB  |                     |
 
 The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 
@@ -38,8 +41,8 @@ gstreamer1.0-omx-rpi-config gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-x
 icu-devtools libasound2-dev libatk1.0-dev libatk-bridge2.0-dev
 libatspi2.0-dev libaudit-dev libavcodec-dev libavformat-dev
-libbison-dev libbsd-dev libc6-dev libcairo2-dev libcap-ng-dev
-libc-dev-bin libcups2-dev libcupsimage2-dev libdbus-1-dev
+libbison-dev libbsd-dev libc6-dev libcairo2-dev libcap-ng-dev libbluetooth-dev
+libc-dev-bin libcups2-dev libcupsimage2-dev libclang-dev libdbus-1-dev
 libdevmapper-dev libdmx-dev libdouble-conversion-dev libdrm-dev
 libegl1-mesa-dev libepoxy-dev libexpat1-dev libfontconfig1-dev
 libfontenc-dev libfreetype6-dev libgbm-dev libgcc-6-dev
@@ -109,6 +112,8 @@ The binaries have only had minimal testing. Both the xcb and eglfs rendering bac
 The binaries support Raspbian Linux and the Raspberry Pi 3 only.
 
 The QtWebengine and QtLocation modules are not included as they require more memory to build than is available on a Raspberry Pi 3.
+
+Qt 5.11.0 requires a newer version of libclang to build the documentation than is currently available in Raspian. The Qt documentation is currently not available in these builds.
 
 # Future Plans
 
