@@ -23,7 +23,7 @@
 # Qt version to build
 VERSION_MAJOR=5
 VERSION_MINOR=11
-VERSION_PATCH=0
+VERSION_PATCH=1
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
@@ -104,15 +104,15 @@ while getopts "hn0123456789" opt; do
 done
 
 # if no build steps were specified, enable them all.
-if [ -z "$step_0$step_1$step_2$step_3$step_4$step_5$step_6$step_7$step_8$step_8" ]
+if [ -z "$step_0$step_1$step_2$step_3$step_4$step_5$step_6$step_7$step_8$step_9" ]
 then
     step_0=1
     step_1=1
     step_2=1
     step_3=1
     step_4=1
-    step_5=1
-    step_6=1
+#   step_5=1
+#   step_6=1
     step_7=1
     step_8=1
     step_9=1

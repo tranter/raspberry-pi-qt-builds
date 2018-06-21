@@ -16,8 +16,8 @@ These builds support the latest Qt "recommended" and "long term support" release
 | 5.9.6      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
 | 5.10.1     | Raspberry Pi 3 | Native | Full    | 454MB  |                     |
 | 5.10.1     | Raspberry Pi 3 | Native | Minimal |  59MB  | No examples or docs |
-| 5.11.0     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
-| 5.11.0     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
+| 5.11.1     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
+| 5.11.1     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
 
 | Qt Creator Version | Platform       | Type   | Options | Size   | Comments            |
@@ -112,7 +112,7 @@ The binaries support Raspbian Linux and the Raspberry Pi 3 only.
 
 The QtWebengine and QtLocation modules are not included as they require more memory to build than is available on a Raspberry Pi 3.
 
-Qt 5.11.0 requires a newer version of libclang to build the documentation than is currently available in Raspbian. The Qt documentation is currently not available in these builds.
+Qt 5.11.0 and later requires a newer version of libclang to build the documentation than is currently available in Raspbian. The Qt documentation is currently not available in these builds.
 
 The software was built on a Raspian system based on the "stretch" release. It won't run on the older "jessie" release.
 
