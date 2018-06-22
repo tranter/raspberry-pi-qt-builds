@@ -14,15 +14,13 @@ These builds support the latest Qt "recommended" and "long term support" release
 | ---------- | -------------- | -------| ------- | ------ | ------------------- |
 | 5.9.6      | Raspberry Pi 3 | Native | Full    | 591MB  |                     |
 | 5.9.6      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
-| 5.10.1     | Raspberry Pi 3 | Native | Full    | 454MB  |                     |
-| 5.10.1     | Raspberry Pi 3 | Native | Minimal |  59MB  | No examples or docs |
 | 5.11.1     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
 | 5.11.1     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
 
-| Qt Creator Version | Platform       | Type   | Options | Size   | Comments            |
-| ------------------ | -------------- | -------| ------- | ------ | ------------------- |
-| 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  |                     |
+| Qt Creator Version | Platform       | Type   | Options | Size   | Comments               |
+| ------------------ | -------------- | -------| ------- | ------ | ---------------------- |
+| 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.9.6 |
 
 The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 
@@ -102,7 +100,15 @@ cd /
 sudo tar xf /home/pi/Qt5.10.1-RaspberryPi3-bin-full.tgz
 ```
 
+Qt Creator can be installed in a similar way, e.g.
+```
+cd /
+sudo tar xf /home/pi/QtCreator4.6.2-Qt5.9.6-RaspberryPi3-bin.tgz
+```
+
 You can then run qmake specifying the full path, e.g. /usr/local/Qt-5.10.1/bin/qmake. You may want to add the Qt binary directory (e.g. /usr/local/Qt-5.10.1/bin) to your path.
+
+Qt Creator can be run as "qtcreator" (it gets installed in /usr/local/bin/qtcreator).
 
 # Known Issues and Limitations
 
@@ -113,6 +119,8 @@ The binaries support Raspbian Linux and the Raspberry Pi 3 only.
 The QtWebengine and QtLocation modules are not included as they require more memory to build than is available on a Raspberry Pi 3.
 
 Qt 5.11.0 and later requires a newer version of libclang to build the documentation than is currently available in Raspbian. The Qt documentation is currently not available in these builds.
+
+The Qt Creator binary is built against a specific version of Qt. That version needs to be installed in order to run it. You can install multiple versions of Qt if desired, provided that you have enough disk space.
 
 The software was built on a Raspian system based on the "stretch" release. It won't run on the older "jessie" release.
 
