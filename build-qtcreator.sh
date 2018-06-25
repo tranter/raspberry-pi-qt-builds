@@ -63,6 +63,16 @@ DIR=`basename ${SOURCE} .tar.xz`
 # Name of created build archive file
 BUILD="QtCreator${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-Qt${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}-RaspberryPi3-bin.tgz"
 
+# Make sure qmake is found in search path.
+if which qmake >/dev/null
+then
+    echo "Using qmake in `which qmake`"
+else
+    echo "A qmake was not found."
+    echo "Make sure it is installed and in the search path."
+    exit 1
+fi
+
 echo "*** Building Qt Creator ${VER3}${VERSION_SUFFIX}"
 if [ ! -d "${BUILD_DIR}" ]
 then
