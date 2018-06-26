@@ -154,14 +154,14 @@ else
   make -s -j${PAR}
 fi
 
-# Build docs
-echo "*** Building docs"
-if [ -n "$no_exec" ]
-then
-  echo make -s -j${PAR} docs
-else
-  make -s -j${PAR} docs
-fi
+# Build docs - disable for recent releases of Qt.
+#echo "*** Building docs"
+#if [ -n "$no_exec" ]
+#then
+#  echo make -s -j${PAR} docs
+#else
+#  make -s -j${PAR} docs
+#fi
 
 # Install
 echo "*** Installing"
@@ -183,15 +183,6 @@ else
   tar czf ${BUILD} /usr/local/bin/q* /usr/local/share/icons /usr/local/share/qtcreator /usr/local/share/metainfo /usr/local/share/applications /usr/local/lib/qtcreator /usr/local/libexec/qtcreator
 fi
 
-# Remove source
-echo "*** Removing source"
-if [ -n "$no_exec" ]
-then
-  echo rm -rf ${DIR}
-else
-  rm -rf ${DIR}
-fi
-
 # Remove install
 echo "*** Removing install"
 if [ -n "$no_exec" ]
@@ -199,6 +190,15 @@ then
   echo sudo make uninstall INSTALL_ROOT=/usr/local/
 else
   sudo make uninstall INSTALL_ROOT=/usr/local/
+fi
+
+# Remove source
+echo "*** Removing source"
+if [ -n "$no_exec" ]
+then
+  echo rm -rf ${DIR}
+else
+  rm -rf ${DIR}
 fi
 
 # Done.
