@@ -199,14 +199,6 @@ then
         cd ${DIR}
     fi
 
-    # Remove modules that are too big to build natively.
-    echo "*** Removing qtlocation and qtwebengine"
-    if [ -n "$no_exec" ]
-    then
-        echo rm -rf qtlocation qtwebengine
-    else
-        rm -rf qtlocation qtwebengine
-    fi
 fi
 
 # Configure
@@ -218,19 +210,19 @@ then
         if [ -n "$no_exec" ]
         then
             echo cd ${DIR}
-            echo ./configure -opensource -confirm-license -nomake examples -nomake tests
+            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests
         else
             cd ${DIR}
-            ./configure -opensource -confirm-license -nomake examples -nomake tests
+            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests
         fi
     else
         if [ -n "$no_exec" ]
         then
             echo cd ${DIR}
-            echo ./configure -opensource -confirm-license
+            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation
         else
             cd ${DIR}
-            ./configure -opensource -confirm-license
+            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation
         fi
     fi
 fi

@@ -117,13 +117,15 @@ The binaries have only had minimal testing. Both the xcb and eglfs rendering bac
 
 The binaries support Raspbian Linux and the Raspberry Pi 3 only.
 
-The QtWebengine and QtLocation modules are not included as they require more memory to build than is available on a Raspberry Pi 3.
+The QtWebengine and QtLocation modules are not included as they require more memory to build than is available on a Raspberry Pi 3 (you might be able to compile them if you add swap space).
 
 Qt 5.11.0 and later requires a newer version of libclang to build the documentation than is currently available in Raspbian. The Qt documentation is currently not available in these builds.
 
 The Qt Creator binary is built against a specific version of Qt. That version needs to be installed in order to run it. You can install multiple versions of Qt if desired, provided that you have enough disk space.
 
 The software was built on a Raspian system based on the "stretch" release. It won't run on the older "jessie" release.
+
+It is not using hardware (GPU) OpenGL, so OpenGL performance will be poor.
 
 # Future Plans
 
