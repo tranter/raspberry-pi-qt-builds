@@ -6,6 +6,10 @@ Qt builds for the Raspberry Pi platform
 
 This project contains scripts for building Qt natively on the Raspberry Pi platform. It includes the Qt libraries and tools (e.g. qmake) for developing Qt-based applications on the Raspberry Pi. Also included are binaries (in the form of tar archives) for various versions of Qt that will run under the Raspbian Linux distribution. As building Qt natively is very time consuming, these are provided for the convenience of developers who want to use a recent version of Qt on the Raspberry Pi platform running Raspbian.
 
+Note that if you want to do significant Qt development for the Raspberry Pi, it is generally recommended to set up a cross-compiled development environment running on a faster desktop computer. While more complex to initially set up, this will usually pay off in reduced build times.
+
+Also note that Raspbian Linux includes packages for Qt 5.7.1. If this version is new enough for you, you may want to use the official Raspbian/Debian Qt packages rather that the ones provided here.
+
 # Features
 
 These builds support the latest Qt "recommended" and "long term support" releases. The downloads include both a "full" version as well as a "minimal" version which does not include the Qt documentation or example applications. The builds are provided in the form of tar archives which can be extracted on a Raspberry Pi system running Raspbian. The table below lists the current binary builds.
