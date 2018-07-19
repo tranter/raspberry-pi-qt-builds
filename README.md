@@ -26,6 +26,7 @@ These builds support the latest Qt "recommended" and "long term support" release
 | ------------------ | -------------- | -------| ------- | ------ | ----------------------- |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.9.6  |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.11.1 |
+| 4.7.0              | Raspberry Pi 3 | Native | Full    |  25MB  | Built against Qt 5.11.1 |
 
 The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 

@@ -10,8 +10,8 @@
 
 # Qt Creator version to build
 VERSION_MAJOR=4
-VERSION_MINOR=6
-VERSION_PATCH=2
+VERSION_MINOR=7
+VERSION_PATCH=0
 
 # Qt version to build against
 QT_VERSION_MAJOR=5
@@ -187,8 +187,10 @@ fi
 echo "*** Removing install"
 if [ -n "$no_exec" ]
 then
+  echo cd ${DIR}
   echo sudo make uninstall INSTALL_ROOT=/usr/local/
 else
+  cd ${DIR}
   sudo make uninstall INSTALL_ROOT=/usr/local/
 fi
 
@@ -196,8 +198,10 @@ fi
 echo "*** Removing source"
 if [ -n "$no_exec" ]
 then
+  echo cd ..
   echo rm -rf ${DIR}
 else
+  cd ..
   rm -rf ${DIR}
 fi
 
