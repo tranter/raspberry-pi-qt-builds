@@ -23,7 +23,7 @@
 # Qt version to build
 VERSION_MAJOR=5
 VERSION_MINOR=11
-VERSION_PATCH=1
+VERSION_PATCH=2
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
@@ -210,19 +210,19 @@ then
         if [ -n "$no_exec" ]
         then
             echo cd ${DIR}
-            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests
+            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests -no-assimp
         else
             cd ${DIR}
-            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests
+            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -nomake examples -nomake tests -no-assimp
         fi
     else
         if [ -n "$no_exec" ]
         then
             echo cd ${DIR}
-            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation
+            echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -no-assimp
         else
             cd ${DIR}
-            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation
+            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -no-assimp
         fi
     fi
 fi

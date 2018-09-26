@@ -11,12 +11,12 @@
 # Qt Creator version to build
 VERSION_MAJOR=4
 VERSION_MINOR=7
-VERSION_PATCH=0
+VERSION_PATCH=1
 
 # Qt version to build against
 QT_VERSION_MAJOR=5
 QT_VERSION_MINOR=11
-QT_VERSION_PATCH=1
+QT_VERSION_PATCH=2
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
@@ -128,13 +128,13 @@ fi
 
 # Currently need to apply a patch to get a third party library to
 # build on ARM.
-echo "*** Applying patch"
-if [ -n "$no_exec" ]
-then
-  echo "patch -p1 <../qt-creator-arm.patch"
-else
-  patch -p1 <../qt-creator-arm.patch
-fi
+#echo "*** Applying patch"
+#if [ -n "$no_exec" ]
+#then
+#  echo "patch -p1 <../qt-creator-arm.patch"
+#else
+#  patch -p1 <../qt-creator-arm.patch
+#fi
 
 # Run qmake (needs to be in path)
 echo "*** Running qmake"

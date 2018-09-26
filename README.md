@@ -18,15 +18,15 @@ These builds support the latest Qt "recommended" and "long term support" release
 | ---------- | -------------- | -------| ------- | ------ | ------------------- |
 | 5.9.6      | Raspberry Pi 3 | Native | Full    | 591MB  |                     |
 | 5.9.6      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
-| 5.11.1     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
-| 5.11.1     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
+| 5.11.2     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
+| 5.11.2     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
 
 | Qt Creator Version | Platform       | Type   | Options | Size   | Comments                |
 | ------------------ | -------------- | -------| ------- | ------ | ----------------------- |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.9.6  |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.11.1 |
-| 4.7.0              | Raspberry Pi 3 | Native | Full    |  25MB  | Built against Qt 5.11.1 |
+| 4.7.1              | Raspberry Pi 3 | Native | Full    |  25MB  | Built against Qt 5.11.2 |
 
 The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 
@@ -42,7 +42,7 @@ dpkg-dev firebird-dev flex freetds-dev gstreamer1.0-alsa
 gstreamer1.0-libav gstreamer1.0-omx gstreamer1.0-omx-rpi
 gstreamer1.0-omx-rpi-config gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-x
-icu-devtools libasound2-dev libatk1.0-dev libatk-bridge2.0-dev
+icu-devtools libasound2-dev libatk1.0-dev libatk-bridge2.0-dev libassimp-dev
 libatspi2.0-dev libaudit-dev libavcodec-dev libavformat-dev
 libbison-dev libbsd-dev libc6-dev libcairo2-dev libcap-ng-dev libbluetooth-dev
 libc-dev-bin libcups2-dev libcupsimage2-dev libclang-dev libdbus-1-dev
