@@ -16,8 +16,8 @@ These builds support the latest Qt "recommended" and "long term support" release
 
 | Qt Version | Platform       | Type   | Options | Size   | Comments            |
 | ---------- | -------------- | -------| ------- | ------ | ------------------- |
-| 5.9.6      | Raspberry Pi 3 | Native | Full    | 591MB  |                     |
-| 5.9.6      | Raspberry Pi 3 | Native | Minimal |  55MB  | No examples or docs |
+| 5.9.7      | Raspberry Pi 3 | Native | Full    | 586MB  |                     |
+| 5.9.7      | Raspberry Pi 3 | Native | Minimal |  51MB  | No examples or docs |
 | 5.11.2     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
 | 5.11.2     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
@@ -26,7 +26,7 @@ These builds support the latest Qt "recommended" and "long term support" release
 | ------------------ | -------------- | -------| ------- | ------ | ----------------------- |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.9.6  |
 | 4.6.2              | Raspberry Pi 3 | Native | Full    |  41MB  | Built against Qt 5.11.1 |
-| 4.7.1              | Raspberry Pi 3 | Native | Full    |  25MB  | Built against Qt 5.11.2 |
+| 4.7.2              | Raspberry Pi 3 | Native | Full    |  25MB  | Built against Qt 5.11.2 |
 
 The builds include most Qt modules (see below under "Known Issues and Limitations"). The following rendering back ends are included: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
 
