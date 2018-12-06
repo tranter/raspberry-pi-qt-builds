@@ -22,8 +22,8 @@
 
 # Qt version to build
 VERSION_MAJOR=5
-VERSION_MINOR=11
-VERSION_PATCH=2
+VERSION_MINOR=12
+VERSION_PATCH=0
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
@@ -103,7 +103,7 @@ while getopts "hn0123456789" opt; do
   esac
 done
 
-# if no build steps were specified, enable them all.
+# If no build steps were specified, enable them all.
 if [ -z "$step_0$step_1$step_2$step_3$step_4$step_5$step_6$step_7$step_8$step_9" ]
 then
     step_0=1
