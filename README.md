@@ -18,8 +18,8 @@ These builds support the latest Qt "recommended" and "long term support" release
 | ---------- | -------------- | -------| ------- | ------ | ------------------- |
 | 5.9.7      | Raspberry Pi 3 | Native | Full    | 586MB  |                     |
 | 5.9.7      | Raspberry Pi 3 | Native | Minimal |  51MB  | No examples or docs |
-| 5.11.2     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
-| 5.11.2     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
+| 5.11.3     | Raspberry Pi 3 | Native | Full    | 422MB  |                     |
+| 5.11.3     | Raspberry Pi 3 | Native | Minimal |  61MB  | No examples or docs |
 
 
 | Qt Creator Version | Platform       | Type   | Options | Size   | Comments                |
