@@ -16,13 +16,13 @@
 # 4 - install
 # 5 - build docs
 # 6 - install docs
-# 7 - make tar file of build
-# 8 - remove source
+# 7 - remove source
+# 8 - make tar file of build
 # 9 - remove install
 
 # Qt version to build
 VERSION_MAJOR=5
-VERSION_MINOR=12
+VERSION_MINOR=13
 VERSION_PATCH=0
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
@@ -59,8 +59,8 @@ while getopts "hn0123456789" opt; do
       echo "        4 - install"
       echo "        5 - build docs"
       echo "        6 - install docs"
-      echo "        7 - make tar file of build"
-      echo "        8 - remove source"
+      echo "        7 - remove source"
+      echo "        8 - make tar file of build"
       echo "        9 - remove install"
       exit
       ;;
@@ -289,8 +289,20 @@ then
     fi
 fi
 
-# Make tar file of build
+# Remove source
 if [ -n "$step_7" ]
+then
+    echo "*** Removing source"
+    if [ -n "$no_exec" ]
+    then
+        echo rm -rf ${DIR}
+    else
+        rm -rf ${DIR}
+    fi
+fi
+
+# Make tar file of build
+if [ -n "$step_8" ]
 then
     echo "*** Making tar file of build"
     if [ -n "$no_exec" ]
@@ -300,18 +312,6 @@ then
     else
         cd ${DIR}/..
         tar czf ${BUILD} /usr/local/Qt-${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
-    fi
-fi
-
-# Remove source
-if [ -n "$step_8" ]
-then
-    echo "*** Removing source"
-    if [ -n "$no_exec" ]
-    then
-        echo rm -rf ${DIR}
-    else
-        rm -rf ${DIR}
     fi
 fi
 
