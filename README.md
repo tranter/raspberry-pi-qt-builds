@@ -8,7 +8,7 @@ This project contains scripts for building Qt natively on the Raspberry Pi platf
 
 Note that if you want to do significant Qt development for the Raspberry Pi, it is generally recommended to set up a cross-compiled development environment running on a faster desktop computer. While more complex to initially set up, this will usually pay off in reduced build times.
 
-Also note that Raspbian Linux includes packages for Qt 5.7.1. If this version is new enough for you, you may want to use the official Raspbian/Debian Qt packages rather that the ones provided here.
+Also note that Raspberry Pi OS includes packages for Qt 5.11.3. If this version is new enough for you, you may want to use the official Raspberry Pi OS Qt packages rather than the ones provided here.
 
 # Features
 
@@ -27,6 +27,8 @@ These builds support the latest Qt "recommended" and "long term support" release
 | 5.13.0     | Raspberry Pi 3 | Native | Full    | 504MB  |                     |
 | 5.13.0     | Raspberry Pi 3 | Native | Minimal |  58MB  | No examples or docs |
 | 5.14.1     | Raspberry Pi 3 | Native | Minimal |  71MB  | No examples or docs |
+| 5.15.2     | Raspberry Pi 4 | Native | Minimal |  67MB  | No examples or docs |
+| 5.15.2     | Raspberry Pi 4 | Native | Full    | 625MB  |                     |
 
 
 | Qt Creator Version | Platform       | Type   | Options | Size   | Comments                |

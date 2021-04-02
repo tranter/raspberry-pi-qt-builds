@@ -22,8 +22,8 @@
 
 # Qt version to build
 VERSION_MAJOR=5
-VERSION_MINOR=14
-VERSION_PATCH=1
+VERSION_MINOR=15
+VERSION_PATCH=2
 
 # Set if needed for a beta or RC version, e.g. "-beta4"
 # Leave empty for release.
@@ -111,8 +111,8 @@ then
     step_2=1
     step_3=1
     step_4=1
-#   step_5=1
-#   step_6=1
+    step_5=1
+    step_6=1
     step_7=1
     step_8=1
     step_9=1
@@ -222,7 +222,7 @@ then
             echo ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -no-assimp
         else
             cd ${DIR}
-            ./configure -opensource -confirm-license -skip qtwebengine -skip qtlocation -no-assimp
+            ./configure -opensource -confirm-license -no-assimp
         fi
     fi
 fi
