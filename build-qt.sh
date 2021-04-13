@@ -131,10 +131,10 @@ DIR=${BUILD_DIR}/`basename ${SOURCE} .tar.xz`
 # Name of created build archive file
 if [ ${BUILD_TYPE} = "full" ]
 then
-    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-full.tgz"
+    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi4-bin-full.tgz"
 elif [ ${BUILD_TYPE} = "minimal" ]
 then
-    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi3-bin-minimal.tgz"
+    BUILD="Qt${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}-RaspberryPi4-bin-minimal.tgz"
 else
     echo "Unknown build type: ${BUILD_TYPE}"
     exit 1

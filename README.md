@@ -72,7 +72,7 @@ libpipeline-dev libpixman-1-dev libpng-dev libpq-dev libproxy-dev
 libpthread-stubs0-dev libpulse-dev libpython2.7-dev libpython3.5-dev
 libpython3-dev libpython-all-dev libpython-dev libqt5opengl5-dev
 libqt5webkit5-dev libraspberrypi-dev librtimulib-dev libselinux1-dev
-libsepol1-dev libsgutils2-dev libsm-dev libsqlite3-dev libssl1.0-dev
+libsepol1-dev libsgutils2-dev libsm-dev libsqlite3-dev libssl-dev
 libstdc++-6-dev libswscale-dev libsystemd-dev libtiff5-dev libudev-dev
 libwayland-dev libx11-dev libx11-xcb1 libx11-xcb-dev libxau-dev
 libxaw7-dev libxcb1 libxcb1-dev libxcb-dri2-0-dev libxcb-dri3-dev
@@ -146,7 +146,6 @@ It is not using hardware (GPU) OpenGL, so OpenGL performance will be poor.
 
 The following are some features that are being considered for the future:
 
-- Add QtWebEngine and QtLocation modules
 - Offer Debian format packages
 - Provide cross-compilation packages
 - Add builds for other Raspberry Pi models
